@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ai-giai-phuong-trinh
+    env: python
+    plan: free
+    region: sg
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn backend.server:app
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false

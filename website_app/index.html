@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI hỗ trợ giải phương trình - THCS Nguyễn Huệ, Pleiku</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="logopng.png" alt="Logo THCS Nguyễn Huệ" class="logo"/>
+    <div>
+      <h1>AI hỗ trợ giải phương trình – THCS Nguyễn Huệ, Pleiku</h1>
+      <p>Tác giả: Tô Ngọc Nam — THCS Nguyễn Huệ, Pleiku</p>
+    </div>
+  </header>
+  <main>
+    <section class="card demo">
+      <h2>Nhập phương trình (hoặc tải ảnh bài làm)</h2>
+      <textarea id="problem" placeholder="Nhập phương trình, ví dụ: 2x + 3 = 7" rows="3"></textarea>
+      <div class="controls">
+        <button id="solveBtn">Giải và hướng dẫn</button>
+        <button id="exampleBtn">Ví dụ mẫu</button>
+      </div>
+      <div style="margin-top:1rem">
+        <label for="imageInput">Hoặc tải ảnh bài làm (chụp từ điện thoại):</label><br/>
+        <input type="file" id="imageInput" accept="image/*"/>
+        <button id="uploadImageBtn">Gửi ảnh để AI phân tích</button>
+      </div>
+      <div id="result" class="result"></div>
+    </section>
+    <section class="card notes">
+      <h3>Gợi ý chức năng</h3>
+      <ul>
+        <li>AI phân tích từng bước, chỉ ra lỗi nếu học sinh đã nhập bước giải.</li>
+        <li>AI có thể đọc ảnh (chữ viết tay rõ) và phân tích nội dung để chấm lỗi.</li>
+        <li>Trả về các bước giải và kết luận cuối cùng.</li>
+      </ul>
+    </section>
+    <section class="card contact">
+      <h3>Liên hệ</h3>
+      <p>Email: tongocnam2006@gmail.com</p>
+    </section>
+  </main>
+  <footer>
+    <p>Sản phẩm tham dự Cuộc thi Ứng dụng AI trong Giáo dục Việt Nam 2025</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
