@@ -92,11 +92,10 @@ def solve_image():
 def uploaded_file(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"], filename, as_attachment=False)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT",8000)))
 from flask import send_from_directory
 import os
 
+# ---- Các route để hiển thị giao diện web ----
 @app.route('/')
 def home():
     return send_from_directory(os.path.join(os.path.dirname(__file__), '../website_app'), 'index.html')
@@ -104,3 +103,9 @@ def home():
 @app.route('/<path:path>')
 def static_files(path):
     return send_from_directory(os.path.join(os.path.dirname(__file__), '../website_app'), path)
+
+
+# ---- Chạy Flask server ----
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
