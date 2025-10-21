@@ -94,3 +94,13 @@ def uploaded_file(filename):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT",8000)))
+from flask import send_from_directory
+import os
+
+@app.route('/')
+def home():
+    return send_from_directory(os.path.join(os.path.dirname(__file__), '../website_app'), 'index.html')
+
+@app.route('/<path:path>')
+def static_files(path):
+    return send_from_directory(os.path.join(os.path.dirname(__file__), '../website_app'), path)
